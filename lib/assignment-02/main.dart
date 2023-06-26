@@ -96,6 +96,36 @@ void main() {
 
   var listReversed = ListMethodsAssignment.listReversed();
 
+  // Q.17: Given a list of integers, write a Dart code that uses the map() method
+  // to create a new list with each value squared. The program should take in the
+  // original list as a parameter and print the new list.
+
+
+  var squaredValueFromList = ListMethodsAssignment.squaredValueFromList();
+
+  // Q.18: Create a map named "person" with the following key-value pairs:
+  // "name" as "John", "age" as 25, "isStudent" as true. Write a Dart code
+  // to check if the person is both a student and over 18 years old.
+  // Print "Eligible" if both conditions are true, otherwise print "Not eligible".
+
+
+  var checkUserCondition = ListMethodsAssignment.checkUserCondition();
+
+
+  // Q.19: Given a map representing a product with keys
+  // "name", "price", and "quantity", write Dart code to check if
+  // the product is in stock. If the quantity is greater than 0, print "In stock",
+  // otherwise print "Out of stock".
+
+  var stockChecker = ListMethodsAssignment.stockChecker();
+
+
+  // Q.20: Create a map named "car" with the following key-value
+  // pairs: "brand" as "Toyota", "color" as "Red", "isSedan" as true.
+  // Write Dart code to check if the car is a sedan and red in color.
+  // Print "Match" if both conditions are true, otherwise print "No match".
+
+  var brandMatcher = ListMethodsAssignment.brandMatcher();
 
   // Q.21: Given a map representing a user with keys
   // "name", "isAdmin", and "isActive",
@@ -285,6 +315,68 @@ class ListMethods {
     print(namesWithReverseOrder);
   }
 
+
+  // Q. 17
+  squaredValueFromList() {
+
+    List<int> numbers = [1,2,3,5,5,7,8,8,9,9,6];
+    List<int> squareNumbers = numbers.map((int e) => e * e).toList();
+    print("Q. 17");
+    print(numbers);
+    print(squareNumbers);
+
+  }
+
+  // Q. 18
+  checkUserCondition() {
+    Map<String, dynamic> userData = {
+      "name" : "John",
+      "age" : 25,
+      "isStudent" : true
+    };
+
+    print("Q. 18");
+    if((userData['age'] > 18) && userData['isStudent'] == true ) {
+      print("Eligible");
+    }else{
+      print("Not Eligible");
+    }
+
+  }
+
+  //Q. 19
+  stockChecker(){
+    Map<String, dynamic> productData = {
+      "name": "headPhone",
+      "quantity": 12,
+      "price": 300,
+
+    };
+
+    print("Q. 19");
+    if(productData['quantity'] > 0){
+      print("In Stock");
+    }else{
+      print("Out of Stock");
+    }
+  }
+
+  //Q. 20
+  brandMatcher() {
+
+    Map<String, dynamic> carData ={
+      "brand" : "Toyota",
+      "color" : "Red",
+      "isSedan" : true
+    };
+
+    print("Q. 20");
+    if((carData['isSedan'] == true) && (carData['color'] == 'Red')){
+      print("Match");
+    }else{
+      print("No Match");
+    }
+  }
 
   // Q. 21
   isUserAdminAndActiveORNot(){
