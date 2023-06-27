@@ -41,8 +41,7 @@ void main() {
 
   var gettingCapitalAndCurrencyFromCountry =
       ListMethodsAssignment.gettingCapitalAndCurrencyFromCountry();
-  print("Q.06");
-  print(gettingCapitalAndCurrencyFromCountry);
+
 
   // Q.7:
   // Map<String, double> expenses = {
@@ -88,6 +87,9 @@ void main() {
   // Q 11: Write a Dart code that takes in a list and an integer n as parameters.
   // The program should print a new list containing the first n elements from the
   // original list.
+
+  var printingList = ListMethodsAssignment.printingList();
+
 
 
 
@@ -221,22 +223,35 @@ class ListMethods {
 
   // Q 06
   gettingCapitalAndCurrencyFromCountry() {
-    // Map<String, Map> World = {
-    //   "pakistan" :{
-    //     "capitalCity": "ISB", "currency": "PKR" , "language": "URDU"
-    //   },
-    //   "America" :{
-    //     "capitalCity": "ISB", "currency": "PKR" , "language": "URDU"
-    //   }
-    // };
-    //
-    // print(World);
-    //
-    // var worldMapKeys = World.keys;
-    // print(worldMapKeys);
-    // var country =  World.containsKey('pakistan');
-    // print(country);
-    // var country =  World.entries;
+    Map<String, dynamic> world = {
+      'countries': {
+        'USA': {
+          'capitalCity': 'Washington, D.C.',
+          'currency': 'US Dollar',
+          'language': 'English',
+        },
+        'Pakistan': {
+          'capitalCity': 'ISB',
+          'currency': 'PKR',
+          'language': 'Urdu',
+        },
+        'Japan': {
+          'capitalCity': 'Tokyo',
+          'currency': 'Japanese Yen',
+          'language': 'Japanese',
+        },
+      },
+    };
+
+    String countryKey = 'Pakistan';
+
+    String capitalCity = world['countries'][countryKey]['capitalCity'];
+    String currency = world['countries'][countryKey]['currency'];
+
+    print("Q.06");
+    print('Capital of $countryKey: $capitalCity');
+    print('Currency of $countryKey: $currency');
+
   }
 
   // 07
@@ -305,6 +320,21 @@ class ListMethods {
   }
 
   // Q 11
+
+    printingList(){
+      List<T> getFirstNElements<T>(List<T> originalList, int n) {
+        return originalList.sublist(0, n);
+      }
+
+      List<int> originalList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      int n = 5;
+
+      List<int> newList = originalList.sublist(0, n);
+
+      print("Q.11");
+      print(newList);
+    }
+
 
   // Q 12
   listReversed(){
