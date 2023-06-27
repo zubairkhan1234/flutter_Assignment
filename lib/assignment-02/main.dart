@@ -96,7 +96,25 @@ void main() {
   // Q.12: Write a Dart code that takes in a list of strings and prints a new list
   // with the elements in reverse order. The original list should remain unchanged.
 
+
+  var uniqueNumbers = ListMethodsAssignment.uniqueNumber();
+
+
+  // Q. 13 Implement a code that takes in a list of integers and returns a new list containing only
+  // the unique elements from the original list. The order of elements in the new list should be
+  // the same as in the original list
+
   var listReversed = ListMethodsAssignment.listReversed();
+
+  // Q.14: Write a Dart code that takes in a list of integers and prints a new list with
+  // the elements sorted in ascending order. The original list should remain unchanged.
+  var ascendingOrder = ListMethodsAssignment.ascendingOrder();
+
+  // Q.15: Implement a Dart code that uses the where() method to filter out negative
+  // numbers from a list of integers. The program should take in the original list as
+  // a parameter and print a new list containing only the positive numbers.
+  var filterPositiveNumbers = ListMethodsAssignment.filterPositiveNumbers();
+
 
   // Q.17: Given a list of integers, write a Dart code that uses the map() method
   // to create a new list with each value squared. The program should take in the
@@ -104,6 +122,11 @@ void main() {
 
 
   var squaredValueFromList = ListMethodsAssignment.squaredValueFromList();
+
+  // Q.16: Implement a Dart code that uses the where() method to filter out odd
+  // numbers from a list of integers. The program should take in the original
+  // list as a parameter and print a new list containing only the even numbers.
+  var filterEvenNumbers = ListMethodsAssignment.filterEvenNumbers();
 
   // Q.18: Create a map named "person" with the following key-value pairs:
   // "name" as "John", "age" as 25, "isStudent" as true. Write a Dart code
@@ -321,7 +344,7 @@ class ListMethods {
 
   // Q 11
 
-    printingList(){
+  printingList(){
       List<T> getFirstNElements<T>(List<T> originalList, int n) {
         return originalList.sublist(0, n);
       }
@@ -335,7 +358,6 @@ class ListMethods {
       print(newList);
     }
 
-
   // Q 12
   listReversed(){
     List<String> names = ['zubair', 'haseeb', "jahanzain", "anas"];
@@ -345,6 +367,56 @@ class ListMethods {
     print(namesWithReverseOrder);
   }
 
+  // Q 13
+
+  uniqueNumber() {
+    List<int> numbers = [1,1,2,2,3,3,6,6,8,8,5,2];
+    List<int> uniqueList = [];
+    Set<int> uniqueSet = {};
+
+    for (int num in numbers) {
+      if (!uniqueSet.contains(num)) {
+        uniqueList.add(num);
+        uniqueSet.add(num);
+      }
+    }
+    print("Q. 13");
+    print("uniqueList $uniqueList");
+    print("uniqueList $uniqueSet");
+
+    print(uniqueList);
+    return uniqueList;
+  }
+
+  //Q. 14
+  ascendingOrder(){
+  List<int> numbers = [5, 2, 7, 4, 8, 1, 9, 3];
+  List<int> sortedNumbers = List.from(numbers);
+
+  sortedNumbers.sort();
+
+  print("Q. 14");
+  print("Original List: $numbers");
+  print("Sorted List: $sortedNumbers");
+  }
+
+  // Q. 15
+  filterPositiveNumbers() {
+    List<int> numbers = [-5, 10, -3, 8, -1, 6, -2, 4];
+    List<int> positiveNumbers = numbers.where((number) => number >= 0).toList();
+    print("Q. 15");
+    print("positiveNumbers $positiveNumbers");
+  }
+
+  //Q. 16
+
+
+  filterEvenNumbers() {
+    List<int> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    List<int> evenNumbers = numbers.where((number) => number % 2 == 0).toList();
+    print("Q. 16");
+    print("evenNumbers  $evenNumbers");
+  }
 
   // Q. 17
   squaredValueFromList() {
