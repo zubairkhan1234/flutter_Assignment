@@ -41,6 +41,21 @@ void main() {
   // // Q 13
   // var triangleShapeWithRepeatNumbers = methods.triangleShapeWithRepeatNumbers();
 
+  // // Q 14
+  // var triangleWithDifferentNumber = methods.triangleWithDifferentNumber();
+
+  // // Q 15
+  // var pyramidPatternWithNumbers = methods.pyramidPatternWithNumbers();
+
+  // // Q 16
+  // var pyramidPatternWithAsterisk = methods.pyramidPatternWithAsterisk();
+
+  // // Q 17
+  // var authentication  = methods.authentication();
+
+  // // Q 18
+  // var authenticationFromUserList = methods.authenticationFromUserList();
+
 
 
 }
@@ -50,18 +65,15 @@ class Assignments {
 
   evenNumbers() {
     List<int> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    List<int>  evenNumbers = [];
-    for (var i = 0 ; i < numbers.length ; i++){
+    List<int> evenNumbers = [];
+    for (var i = 0; i < numbers.length; i++) {
       var number = numbers[i];
       if (number % 2 == 0) {
         evenNumbers.add(number);
-
       }
-
     }
     print("Q1");
     print(evenNumbers);
-
   }
 
   fibonacciSequence() {
@@ -81,11 +93,9 @@ class Assignments {
     }
   }
 
-  primeNumberChecker(){
-
-
+  primeNumberChecker() {
     print("Type any Numbers");
-    int higherNumber =  int.parse(stdin.readLineSync()!) ;
+    int higherNumber = int.parse(stdin.readLineSync()!);
 
     for (int i = 2; i <= higherNumber / 2; i++) {
       if (higherNumber % i == 0) {
@@ -96,7 +106,7 @@ class Assignments {
     print("$higherNumber is prime number");
   }
 
-  factorialNumber(){
+  factorialNumber() {
     int number = 5;
     int factorial = 1;
 
@@ -104,10 +114,9 @@ class Assignments {
       factorial *= i;
     }
     print('Factorial of $number is $factorial');
-
   }
 
-  sumOfDigit(){
+  sumOfDigit() {
     int number = 1234558;
     int sum = 0;
 
@@ -132,7 +141,7 @@ class Assignments {
     print('Largest number: $largest');
   }
 
-  table(){
+  table() {
     int number = 5;
 
     for (int i = 1; i <= 10; i++) {
@@ -141,13 +150,14 @@ class Assignments {
     }
   }
 
-  palindromeString(){
+  palindromeString() {
     bool isPalindrome(String input) {
       String normalizedInput = input.toLowerCase();
       String reversedInput = normalizedInput.split('').reversed.join('');
 
       return normalizedInput == reversedInput;
     }
+
     String testString = "radar";
 
     if (isPalindrome(testString)) {
@@ -165,8 +175,7 @@ class Assignments {
   //   }
   // }
 
-  triangleShape(){
-
+  triangleShape() {
     int numLines = 4;
 
     for (int i = 1; i <= numLines; i++) {
@@ -184,7 +193,7 @@ class Assignments {
     for (int i = 1; i <= numLines; i++) {
       String line = '';
       for (int j = 1; j <= i; j++) {
-        line +=  "$j" ;
+        line += "$j";
       }
       print(line);
     }
@@ -196,9 +205,138 @@ class Assignments {
     for (int i = 1; i <= numLines; i++) {
       String line = '';
       for (int j = 1; j <= i; j++) {
-        line +=  "$i" ;
+        line += "$i";
       }
       print(line);
     }
   }
+
+  triangleWithDifferentNumber() {
+    int rows = 4; // Number of rows in the triangle
+    dynamic number = 1;
+
+    for (int i = 1; i <= rows; i++) {
+      String line = '';
+      for (int j = 1; j <= i; j++) {
+        // Print the current number
+        line += "${number++}";
+      }
+      print('$line ');
+    }
+  }
+
+  pyramidPatternWithNumbers() {
+    int rows = 4; // Number of rows in the pyramid
+    int number = 1;
+    for (int i = 0; i < rows; i++) {
+      String pyramidPattern = "";
+      for (int j = 0; j < rows - i - 1; j++) {
+        // Print spaces for left-aligned pyramid
+        pyramidPattern += " ";
+        // print(' ');
+      }
+
+      for (int k = 0; k <= i; k++) {
+        // Print asterisks for the pyramid
+        pyramidPattern += '${number++} ';
+        // print('* ');
+      }
+      print(pyramidPattern);
+
+    }
+  }
+
+  pyramidPatternWithAsterisk() {
+    int rows = 4; // Number of rows in the pyramid
+
+    for (int i = 0; i < rows; i++) {
+      String pyramidPattern = "";
+      for (int j = 0; j < rows - i - 1; j++) {
+        // Print spaces for left-aligned pyramid
+        pyramidPattern += " ";
+        // print(' ');
+      }
+
+      for (int k = 0; k <= i; k++) {
+        // Print asterisks for the pyramid
+        pyramidPattern += '* ';
+        // print('* ');
+      }
+      print(pyramidPattern);
+
+    }
+  }
+
+  authentication(){
+
+    String email = "zubair@gmail.com";
+    String password = "123@123";
+
+    print("Type your email");
+    var userEmail = stdin.readLineSync();
+    print("Type Your Password");
+    var userPassword = stdin.readLineSync();
+
+    if(userEmail == email && userPassword == password){
+      print("Login Success");
+    }else{
+      print("email or Password is inCorrect");
+    }
+
+  }
+
+  authenticationFromUserList(){
+    List<Map<String, String>> users = [
+      {"email": "zubair1@example.com", "password": "password1"},
+      {"email": "zubair1@example.com", "password": "password2"},
+      {"email": "zubair1@example.com", "password": "password3"}
+    ];
+
+    bool isLoggedIn = false;
+
+    while (!isLoggedIn) {
+      // Get user input
+      print("Type your email");
+      String email = stdin.readLineSync()!;
+      print("Type Your Password");
+      String password = stdin.readLineSync()!;
+
+      // Check if entered credentials match
+      for (var user in users) {
+        if (user["email"] == email && user["password"] == password) {
+          isLoggedIn = true;
+          break;
+        }
+      }
+
+      // Display appropriate message
+      if (isLoggedIn) {
+        print("login successful.");
+      } else {
+        print("Invalid email or password");
+      }
+    }
+  }
+
+
+  giti(){
+    // Get the list of numbers from the user
+    print("Enter a list of numbers (comma-separated):");
+    String input = stdin.readLineSync()!;
+
+    // Split the input string into a list of numbers
+    List<String> numberStrings = input.split(",");
+    List<int> numbers = numberStrings.map(int.parse).toList();
+
+    // Print the numbers greater than 5 using a for loop and if-else condition
+    print("Numbers greater than 5:");
+    for (int number in numbers) {
+      if (number > 5) {
+        print(number);
+      }
+    }
+  }
+
+
+
 }
