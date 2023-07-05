@@ -56,8 +56,11 @@ void main() {
   // // Q 18
   // var authenticationFromUserList = methods.authenticationFromUserList();
 
+  // Q 19
+  var ifNumberGreaterThanFive = methods.ifNumberGreaterThanFive();
 
-
+  // Q20
+  var vowelsWords = methods.vowelsWords();
 }
 
 class Assignments {
@@ -242,7 +245,6 @@ class Assignments {
         // print('* ');
       }
       print(pyramidPattern);
-
     }
   }
 
@@ -263,12 +265,10 @@ class Assignments {
         // print('* ');
       }
       print(pyramidPattern);
-
     }
   }
 
-  authentication(){
-
+  authentication() {
     String email = "zubair@gmail.com";
     String password = "123@123";
 
@@ -277,15 +277,14 @@ class Assignments {
     print("Type Your Password");
     var userPassword = stdin.readLineSync();
 
-    if(userEmail == email && userPassword == password){
+    if (userEmail == email && userPassword == password) {
       print("Login Success");
-    }else{
+    } else {
       print("email or Password is inCorrect");
     }
-
   }
 
-  authenticationFromUserList(){
+  authenticationFromUserList() {
     List<Map<String, String>> users = [
       {"email": "zubair1@example.com", "password": "password1"},
       {"email": "zubair1@example.com", "password": "password2"},
@@ -318,25 +317,29 @@ class Assignments {
     }
   }
 
-
-  giti(){
-    // Get the list of numbers from the user
-    print("Enter a list of numbers (comma-separated):");
-    String input = stdin.readLineSync()!;
-
-    // Split the input string into a list of numbers
-    List<String> numberStrings = input.split(",");
-    List<int> numbers = numberStrings.map(int.parse).toList();
-
-    // Print the numbers greater than 5 using a for loop and if-else condition
+  ifNumberGreaterThanFive() {
+    List<int> numberList = [2, 8, 3, 10, 6, 4, 7];
     print("Numbers greater than 5:");
-    for (int number in numbers) {
-      if (number > 5) {
-        print(number);
+
+    for (int num in numberList) {
+      if (num > 5) {
+        print(num);
       }
     }
   }
 
+  vowelsWords() {
+    String text = "Hello, World!";
+    int vowelCount = 0;
+    String vowels = "aeiouAEIOU";
 
+    for (int i = 0; i < text.length; i++) {
+      if (vowels.contains(text[i])) {
+        vowelCount++;
+      }
+    }
 
+    print("vowel word count");
+    print(vowelCount);
+  }
 }
