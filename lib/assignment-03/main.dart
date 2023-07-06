@@ -56,6 +56,24 @@ void main() {
   // // Q 18
   // var authenticationFromUserList = methods.authenticationFromUserList();
 
+  // // Q 19
+  // var ifNumberGreaterThanFive = methods.ifNumberGreaterThanFive();
+
+  // // Q 20
+  // var vowelsWords = methods.vowelsWords();
+
+  // // Q 21
+  // var  maxAndMinElement = methods.maxAndMinElement();
+
+  // // Q 22
+  // var sumAndSquareOfOddNumber = methods.sumAndSquareOfOddNumber() ;
+
+  // // Q 23
+  // var studentResult = methods.studentResult();
+
+
+  // Q 24
+  var  averageOfNegativeNumbers = methods.averageOfNegativeNumbers();
 
 
 }
@@ -242,7 +260,6 @@ class Assignments {
         // print('* ');
       }
       print(pyramidPattern);
-
     }
   }
 
@@ -263,12 +280,10 @@ class Assignments {
         // print('* ');
       }
       print(pyramidPattern);
-
     }
   }
 
-  authentication(){
-
+  authentication() {
     String email = "zubair@gmail.com";
     String password = "123@123";
 
@@ -277,15 +292,14 @@ class Assignments {
     print("Type Your Password");
     var userPassword = stdin.readLineSync();
 
-    if(userEmail == email && userPassword == password){
+    if (userEmail == email && userPassword == password) {
       print("Login Success");
-    }else{
+    } else {
       print("email or Password is inCorrect");
     }
-
   }
 
-  authenticationFromUserList(){
+  authenticationFromUserList() {
     List<Map<String, String>> users = [
       {"email": "zubair1@example.com", "password": "password1"},
       {"email": "zubair1@example.com", "password": "password2"},
@@ -318,25 +332,140 @@ class Assignments {
     }
   }
 
-
-  giti(){
-    // Get the list of numbers from the user
-    print("Enter a list of numbers (comma-separated):");
-    String input = stdin.readLineSync()!;
-
-    // Split the input string into a list of numbers
-    List<String> numberStrings = input.split(",");
-    List<int> numbers = numberStrings.map(int.parse).toList();
-
-    // Print the numbers greater than 5 using a for loop and if-else condition
+  ifNumberGreaterThanFive() {
+    List<int> numberList = [2, 8, 3, 10, 6, 4, 7];
     print("Numbers greater than 5:");
-    for (int number in numbers) {
-      if (number > 5) {
-        print(number);
+
+    for (int num in numberList) {
+      if (num > 5) {
+        print(num);
       }
     }
   }
 
+  vowelsWords() {
+    String text = "Hello, World!";
+    int vowelCount = 0;
+    String vowels = "aeiouAEIOU";
 
+    for (int i = 0; i < text.length; i++) {
+      if (vowels.contains(text[i])) {
+        vowelCount++;
+      }
+    }
+
+    print("vowel word count");
+    print(vowelCount);
+  }
+
+
+  maxAndMinElement(){
+
+    List<int> numbers = [15, 5, 12, 2, 7, 1];
+
+    int min = numbers[0];
+    int max = numbers[0];
+
+    for (int i = 1; i < numbers.length; i++) {
+      if (numbers[i] < min) {
+        min = numbers[i];
+      }
+
+      if (numbers[i] > max) {
+        max = numbers[i];
+      }
+    }
+
+    print("Minimum: $min");
+    print("Maximum: $max");
+  }
+
+  sumAndSquareOfOddNumber(){
+    List<int> numberList = [1, 2, 3, 4, 5, 6, 7];
+    int sum = 0;
+
+    for (int num in numberList) {
+      if (num % 2 != 0) { // Check if the number is odd
+        sum += (num * num); // Square the number and add it to the sum
+      }
+    }
+
+    print("The sum of the squares of odd numbers is: $sum");
+
+  }
+
+
+
+  studentResult(){
+
+    List<Map<String, dynamic>> studentDetails = [
+      {
+        'name': 'John',
+        'marks': [80, 75, 90],
+        'section': 'A',
+        'rollNumber': 101
+      },
+      {
+        'name': 'Emma',
+        'marks': [95, 92, 88],
+        'section': 'B',
+        'rollNumber': 102
+      },
+      {
+        'name': 'Ryan',
+        'marks': [70, 65, 75],
+        'section': 'A',
+        'rollNumber': 103
+      },
+    ];
+
+    print('Student Grades:');
+
+
+    for (var student in studentDetails) {
+      String name = student['name'];
+      List<int> marks = student['marks'];
+      int totalMarks = marks.reduce((a, b) => a + b);
+      double average = totalMarks / marks.length;
+      String grade;
+
+      if (average >= 90) {
+        grade = 'A';
+      } else if (average >= 80) {
+        grade = 'B';
+      } else if (average >= 70) {
+        grade = 'C';
+      } else if (average >= 60) {
+        grade = 'D';
+      } else {
+        grade = 'F';
+      }
+
+      print('Name: $name\tGrade: $grade');
+    }
+  }
+
+  averageOfNegativeNumbers(){
+
+    List<int> numberList = [5, -2, -7, 3, -1, 0, -4];
+
+    int count = 0;
+    int sum = 0;
+
+    for (int num in numberList) {
+      if (num < 0) { // Check if the number is negative
+        count++;
+        sum += num;
+      }
+    }
+
+    if (count == 0) {
+      return 0.0;
+    }
+
+    var average = sum / count.toDouble();
+
+    print("average of negative numbers is: $average");
+  }
 
 }
