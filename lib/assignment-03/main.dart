@@ -71,12 +71,13 @@ void main() {
   // // Q 23
   // var studentResult = methods.studentResult();
 
+  // // Q 24
+  // var  averageOfNegativeNumbers = methods.averageOfNegativeNumbers();
 
-  // Q 24
-  var  averageOfNegativeNumbers = methods.averageOfNegativeNumbers();
-
-
+  // Q 25
+  var isPrimeNumber = methods.isPrimeNumber();
 }
+
 
 class Assignments {
   Assignments();
@@ -358,9 +359,7 @@ class Assignments {
     print(vowelCount);
   }
 
-
-  maxAndMinElement(){
-
+  maxAndMinElement() {
     List<int> numbers = [15, 5, 12, 2, 7, 1];
 
     int min = numbers[0];
@@ -380,24 +379,21 @@ class Assignments {
     print("Maximum: $max");
   }
 
-  sumAndSquareOfOddNumber(){
+  sumAndSquareOfOddNumber() {
     List<int> numberList = [1, 2, 3, 4, 5, 6, 7];
     int sum = 0;
 
     for (int num in numberList) {
-      if (num % 2 != 0) { // Check if the number is odd
+      if (num % 2 != 0) {
+        // Check if the number is odd
         sum += (num * num); // Square the number and add it to the sum
       }
     }
 
     print("The sum of the squares of odd numbers is: $sum");
-
   }
 
-
-
-  studentResult(){
-
+  studentResult() {
     List<Map<String, dynamic>> studentDetails = [
       {
         'name': 'John',
@@ -420,7 +416,6 @@ class Assignments {
     ];
 
     print('Student Grades:');
-
 
     for (var student in studentDetails) {
       String name = student['name'];
@@ -445,15 +440,15 @@ class Assignments {
     }
   }
 
-  averageOfNegativeNumbers(){
-
+  averageOfNegativeNumbers() {
     List<int> numberList = [5, -2, -7, 3, -1, 0, -4];
 
     int count = 0;
     int sum = 0;
 
     for (int num in numberList) {
-      if (num < 0) { // Check if the number is negative
+      if (num < 0) {
+        // Check if the number is negative
         count++;
         sum += num;
       }
@@ -468,4 +463,36 @@ class Assignments {
     print("average of negative numbers is: $average");
   }
 
+  isPrimeNumber() {
+    bool isPrime(int number) {
+      if (number < 2) {
+        return false;
+      }
+
+      for (int i = 2; i * i <= number; i++) {
+        if (number % i == 0) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    List<int> getPrimeNumbers(List<int> numbers) {
+      List<int> primeNumbers = [];
+
+      for (int num in numbers) {
+        if (isPrime(num)) {
+          primeNumbers.add(num);
+        }
+      }
+
+      return primeNumbers;
+    }
+
+    List<int> numberList = [4, 7, 10, 13, 16, 19, 22, 25, 28, 31];
+    List<int> primeNumbers = getPrimeNumbers(numberList);
+
+    print("Prime numbers: $primeNumbers");
+  }
 }
