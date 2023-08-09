@@ -13,7 +13,9 @@ class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context){
     return BottomNavigationBar(
-        items: [BottomNavigationBarItem(label: "hello")],
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.ice_skating), label: "Home")
+        ],
 
     );
   }
