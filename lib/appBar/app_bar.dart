@@ -9,15 +9,17 @@ class MyAppBar extends StatefulWidget implements PreferredSizeWidget{
 
   @override
   // TODO: implement preferredSize
-  Size get preferredSize => Size.fromHeight(100);
+  Size get preferredSize => Size.fromHeight(50);
 }
 
 class _AppBarState extends State<MyAppBar> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("hello1")),
+    return  AppBar(
+      backgroundColor: Colors.deepOrange[200],
+
+        title: Text("hello1", style: TextStyle( color: Colors.red))
     );
   }
 }
