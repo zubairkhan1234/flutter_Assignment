@@ -90,34 +90,112 @@ class HomePage extends StatelessWidget {
     },
     {
       'name': 'Yasir',
-      'imgPath': 'pic2.jpg',
+      'imgPath': 'pic1.jpg',
       'message': 'Hey there.',
       'time': '11:50 am'
     },
     {
       'name': 'Awais',
-      'imgPath': 'pic3.jpg',
+      'imgPath': 'pic1.jpg',
       'message': 'Hey, what\'s going on?',
       'time': '10:50 am'
     },
     {
       'name': 'Usman',
-      'imgPath': 'pic4.jpg',
+      'imgPath': 'pic1.jpg',
       'message': 'Let\'s hang out',
       'time': '10:50 am'
     },
     {
       'name': 'Saqib',
-      'imgPath': 'pic5.jpeg',
+      'imgPath': 'pic1.jpg',
       'message': 'Call me when you are free',
       'time': '07:50 am'
     },
     {
       'name': 'Hasan',
-      'imgPath': 'pic6.jpeg',
+      'imgPath': 'pic1.jpg',
       'message': 'Been calling you',
       'time': '04:50 am'
     },
+    {
+      'name': 'Hasan',
+      'imgPath': 'pic1.jpg',
+      'message': 'Been calling you',
+      'time': '04:50 am'
+    },
+    {
+      'name': 'Hasan',
+      'imgPath': 'pic1.jpg',
+      'message': 'Been calling you',
+      'time': '04:50 am'
+    },
+    {
+      'name': 'Hasan',
+      'imgPath': 'pic1.jpg',
+      'message': 'Been calling you',
+      'time': '04:50 am'
+    },
+    {
+      'name': 'Hasan',
+      'imgPath': 'pic1.jpg',
+      'message': 'Been calling you',
+      'time': '04:50 am'
+    },
+    {
+      'name': 'Hasan',
+      'imgPath': 'pic1.jpg',
+      'message': 'Been calling you',
+      'time': '04:50 am'
+    },
+    {
+      'name': 'Hasan',
+      'imgPath': 'pic1.jpg',
+      'message': 'Been calling you',
+      'time': '04:50 am'
+    },
+    {
+      'name': 'Hasan',
+      'imgPath': 'pic1.jpg',
+      'message': 'Been calling you',
+      'time': '04:50 am'
+    },{
+      'name': 'Hasan',
+      'imgPath': 'pic1.jpg',
+      'message': 'Been calling you',
+      'time': '04:50 am'
+    },{
+      'name': 'Hasan',
+      'imgPath': 'pic1.jpg',
+      'message': 'Been calling you',
+      'time': '04:50 am'
+    },{
+      'name': 'Hasan',
+      'imgPath': 'pic1.jpg',
+      'message': 'Been calling you',
+      'time': '04:50 am'
+    },{
+      'name': 'Hasan',
+      'imgPath': 'pic1.jpg',
+      'message': 'Been calling you',
+      'time': '04:50 am'
+    },{
+      'name': 'Hasan',
+      'imgPath': 'pic1.jpg',
+      'message': 'Been calling you',
+      'time': '04:50 am'
+    },{
+      'name': 'Hasan',
+      'imgPath': 'pic1.jpg',
+      'message': 'Been calling you',
+      'time': '04:50 am'
+    },
+
+
+
+
+
+
   ];
   @override
   Widget build(BuildContext context) {
