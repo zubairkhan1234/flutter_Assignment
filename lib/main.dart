@@ -1,7 +1,9 @@
-// import 'package:flutter/material.dart';
-// import 'package:flutterassignment/myapp/myapp.dart';
 
-// void main() => runApp(MyApp());
+// header footer
+import 'package:flutter/material.dart';
+import 'package:flutterassignment/headerFooter//myapp/myapp.dart';
+
+void main() => runApp(MyApp());
 
 // // class BottomNavigationExample extends StatefulWidget {
 // //   const BottomNavigationExample({Key? key}) : super(key: key);
@@ -63,10 +65,13 @@
 // //   }
 // // }
 
-import 'package:flutter/material.dart';
-import 'package:flutterassignment/whatsAppUI/main.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+// WhatsApp chat screen
+
+// import 'package:flutter/material.dart';
+// import 'package:flutterassignment/whatsAppUI/main.dart';
+//
+// void main() {
+//   runApp(const MyApp());
+// }
 
