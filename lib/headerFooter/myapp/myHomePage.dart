@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "package:flutterassignment/appBar/app_bar.dart";
+import 'package:flutterassignment/headerFooter/body/home.dart';
 import 'package:flutterassignment/headerFooter/bottomBar/bottom_bar.dart';
 
 class MyHomePage extends StatefulWidget{
@@ -35,14 +36,15 @@ class _MyHomePageSate extends State{
   _changeTab(int index) {
     setState(() {
       _selectedTab = index;
+      print(index);
     });
   }
   @override
   Widget build(BuildContext context){
     return Scaffold(
       appBar: MyAppBar(),
-      body: _pa,
-      bottomNavigationBar: BottomBar(),
+      body: Home(),
+      bottomNavigationBar: BottomBar(changeTabIndex: _changeTab),
     );
   }
 }

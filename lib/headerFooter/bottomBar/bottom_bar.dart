@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class BottomBar extends StatefulWidget {
-  const BottomBar({super.key});
+  Function(int) changeTabIndex;
+   BottomBar({super.key, required this.changeTabIndex});
+
 
   @override
   State<BottomBar> createState() => _BottomBarState();
@@ -27,16 +29,12 @@ class _BottomBarState extends State<BottomBar> {
     ),
   ];
 
-  _changeTab(int index) {
-    setState(() {
-      _selectedTab = index;
-    });
-  }
+
   @override
   Widget build(BuildContext context) {
     return  BottomNavigationBar(
       type: BottomNavigationBarType.fixed ,
-      onTap: (index) => _changeTab(index) ,
+      onTap: (index) => widget.changeTabIndex(index) ,
       selectedItemColor: Colors.red,
       currentIndex: _selectedTab,
       backgroundColor: Colors.deepOrange[200],
