@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatefulWidget implements PreferredSizeWidget{
-  MyAppBar({Key? key}) : super(key: key);
+  MyAppBar( {Key? key}) : super(key: key);
 
   @override
   State<MyAppBar> createState() =>  _AppBarState() ;

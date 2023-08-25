@@ -43,7 +43,7 @@ class _MyHomePageSate extends State{
   Widget build(BuildContext context){
     return Scaffold(
       appBar: MyAppBar(),
-      body: Home(),
+      body: Home( _pages[_selectedTab]),
       bottomNavigationBar: BottomBar(changeTabIndex: _changeTab),
     );
   }
