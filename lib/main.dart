@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutterassignment/figmaAssignment01/_app.dart';
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: ,
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("flutter Demo")),
-      body: const Center(
-        child: Text('My Page!'),
-
-      ),
-    );
-  }
-}
+// class MyApp extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: MyHomePage(),
+//     );
+//   }
+// }
+//
+// class MyHomePage extends StatelessWidget {
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: Text("flutter Demo")),
+//       body: const Center(
+//         child: Text('My Page!'),
+//
+//       ),
+//     );
+//   }
+// }
