@@ -9,12 +9,30 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _State extends State<MyHomePage> {
+  List screens = [
+    Text('fist1'),
+    Text('fist2'),
+    Text('fist3'),
+    Text('fist4')
+  ];
+  int screensIndex = 0;
+
+  ontapChangeScreen(index){
+    print(index);
+    setState(() {
+      screensIndex = index;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(title: Text("data")),
-      body:  Center(child: Text("Body")),
-      bottomNavigationBar: CustomBottomNavigation(),
+      body:  screens[screensIndex],
+      bottomNavigationBar: CustomBottomNavigation(ontapChangeScreen: (index) {
+        setState(() {
+          screensIndex =index;
+        });
+      }, index: screensIndex, ),
     );
   }
 }
