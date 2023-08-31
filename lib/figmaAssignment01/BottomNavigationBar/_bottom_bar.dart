@@ -76,6 +76,7 @@ class _BottomNavBarState extends State<CustomBottomNavigation> {
               ),
             ],
             color: Colors.red,
+
             buttonBackgroundColor: Colors.black,
             backgroundColor: Colors.transparent,
             animationCurve: Curves.easeInOut,

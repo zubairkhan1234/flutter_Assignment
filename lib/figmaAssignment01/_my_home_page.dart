@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterassignment/figmaAssignment01/BottomNavigationBar/_bottom_bar.dart';
+import 'package:flutterassignment/figmaAssignment01/screens/onboarding/_onBoarding.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -10,7 +11,7 @@ class MyHomePage extends StatefulWidget {
 
 class _State extends State<MyHomePage> {
   List screens = [
-    Text('fist1'),
+    Onboarding(),
     Text('fist2'),
     Text('fist3'),
     Text('fist4')
@@ -26,6 +27,7 @@ class _State extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      extendBody: true,
       appBar: AppBar(title: Text("data")),
       body:  screens[screensIndex],
       bottomNavigationBar: CustomBottomNavigation(ontapChangeScreen: (index) {

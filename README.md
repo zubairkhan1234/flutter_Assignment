@@ -1,3 +1,9 @@
+Note :
+    Font downloaded from here :  https://fonts.google.com/specimen/Manrope
+    image and icon extracted from here : https://www.figma.com/file/15h46HmnHCvAhzoe3iMpVI/Mini-Project-(UI-%2B-Functionality)?node-id=5%3A8019&mode=dev
+    design was also copied from here : https://www.figma.com/file/15h46HmnHCvAhzoe3iMpVI/Mini-Project-(UI-%2B-Functionality)?node-id=5%3A8019&mode=dev
+
+
 # flutterassignment
 
 A new Flutter project.
