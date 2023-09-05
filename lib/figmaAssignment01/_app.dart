@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart ';
 import 'package:flutterassignment/figmaAssignment01/_my_home_page.dart';
+import 'package:flutterassignment/figmaAssignment01/screens/onboarding/_onBoarding.dart';
 
 
 class MyApp extends StatefulWidget {
@@ -19,7 +20,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         fontFamily: "Manrope",
       ),
-      home: MyHomePage(),
+      home: const Onboarding(),
     );
   }
 }
