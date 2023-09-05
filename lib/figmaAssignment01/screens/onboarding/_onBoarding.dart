@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutterassignment/figmaAssignment01/constants/_svg_icons.dart';
 import 'package:flutterassignment/figmaAssignment01/styles/_colors.dart';
 
 class Onboarding extends StatefulWidget {
@@ -17,67 +19,82 @@ class _OnboardingState extends State<Onboarding> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Color(GlobalColors.blackDark),
-        body: PageView(
-          children: [
-            Column(
-              children: [
-                Text("Your holiday shopping delivered to Screen one",
-                    style: TextStyle(
-                        fontSize: 30,
-                        color: Color(GlobalColors.white),
-                        fontFamily: 'Manrope')),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+        body: SizedBox(
+          width: 400,
+          height: 600,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              SizedBox(
+                width: double.infinity,
+                height: 300,
+                child: PageView(
                   children: [
-                    currentIndex == 0 ? Icon(Icons.circle, size: 10, color: Color(GlobalColors.white)): Icon(Icons.circle_outlined, size: 10, color: Color(GlobalColors.white)),
-                    Icon(Icons.circle_outlined, size: 10, color: Color(GlobalColors.white)),
-                    Icon(Icons.circle_outlined, size: 10, color: Color(GlobalColors.white))
+                    Column(
+                      children: [
+                        Text("Your holiday shopping delivered to Screen one",
+                            style: TextStyle(
+                                fontSize: 30,
+                                color: Color(GlobalColors.white),
+                                fontFamily: 'Manrope')),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            currentIndex == 0
+                                ? SvgPicture.asset(
+                                    SvgIcons.dashLarge,
+                                  )
+                                : SvgPicture.asset(SvgIcons.dashSmall),
+                            SvgPicture.asset(SvgIcons.dashSmall)
+                          ],
+                        )
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Text("Your holiday shopping delivered to Screen one",
+                            style: TextStyle(
+                                fontSize: 30,
+                                color: Color(GlobalColors.white),
+                                fontFamily: 'Manrope')),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset(SvgIcons.dashSmall),
+                            currentIndex == 1
+                                ? SvgPicture.asset(SvgIcons.dashLarge)
+                                : SvgPicture.asset(SvgIcons.dashSmall),
+                          ],
+                        )
+                      ],
+                    )
                   ],
-                )
-              ],
-            ),
-            Column(
-              children: [
-                Text("Your holiday shopping delivered to Screen one",
-                    style: TextStyle(
-                        fontSize: 30,
-                        color: Color(GlobalColors.white),
-                        fontFamily: 'Manrope')),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Icon(Icons.circle_outlined, size: 10, color: Color(GlobalColors.white)),
-                    currentIndex == 1 ? Icon(Icons.circle, size: 10, color: Color(GlobalColors.white)): Icon(Icons.circle_outlined, size: 10, color: Color(GlobalColors.white)),
-                    Icon(Icons.circle_outlined, size: 10, color: Color(GlobalColors.white))
-                  ],
-                )
-              ],
-            ),
-            Column(
-              children: [
-                Text("Your holiday shopping delivered to Screen one",
-                    style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.w700,
-                        color: Color(GlobalColors.white),
-                        fontFamily: 'Raleway')),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Icon(Icons.circle_outlined, size: 10, color: Color(GlobalColors.white)),
-                    Icon(Icons.circle_outlined, size: 10, color: Color(GlobalColors.white)),
-                    currentIndex == 2 ? Icon(Icons.circle, size: 10, color: Color(GlobalColors.white)): Icon(Icons.circle_outlined, size: 10, color: Color(GlobalColors.white)),
+                  onPageChanged: (index) {
+                    setState(() {
+                      currentIndex = index;
+                    });
+                  },
+                ),
+              ),
+              SvgPicture.asset(SvgIcons.imageFallBack),
+              SizedBox(
+                width: 200,
+                height: 100,
+                child: ElevatedButton(
+                    onPressed: () => print("clicked"),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text("Get Started"),
+                        SvgPicture.asset(SvgIcons.arrowRight, color: Color(GlobalColors.white),)
 
-                  ],
-                )
-              ],
-            )
-          ],
-          onPageChanged: (index) {
-            setState(() {
-              currentIndex = index;
-            });
-          },
+                      ],
+                    )),
+              )
+
+                ],
+
+          ),
         ));
   }
 }
