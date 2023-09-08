@@ -19,46 +19,77 @@ class _OnboardingState extends State<Onboarding> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(GlobalColors.blackDark),
+        backgroundColor: GlobalColors.blueLight,
         body: SafeArea(
-          child: SizedBox(
+          child: Container(
             width: 400,
-            height: 600,
+            padding: EdgeInsets.all(30),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
                   width: double.infinity,
                   height: 300,
                   child: PageView(
                     children: [
-                      Column(
-                        children: [
-                          Text("Your holiday shopping delivered to Screen one",
+                      Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              child: Stack(
+                                
+                                children: [
+                                  const Padding(
+                                    padding:  EdgeInsets.only(right: 80),
+                                    child:  Text(
+                                        "Your holiday shopping delivered to Screen one",
+                                        style: TextStyle(
+                                          fontSize: 30,
+                                          color: GlobalColors.white,
+                                          fontFamily: 'Manrope',
+                                          fontWeight: FontWeight.w700,
+                                        )),
+                                  ),
+
+                                   Positioned(child: SvgPicture.asset(SvgIcons.house), bottom: 0, right: 90,)
+                                ],
+                              ),
+                            ),
+                            const Text(
+                              "There's something for everyone to enjoy with Sweet Shop Favourites Screen 1",
                               style: TextStyle(
-                                  fontSize: 30,
-                                  color: Color(GlobalColors.white),
-                                  fontFamily: 'Manrope')),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              currentIndex == 0
-                                  ? SvgPicture.asset(
-                                      SvgIcons.dashLarge,
-                                    )
-                                  : SvgPicture.asset(SvgIcons.dashSmall),
-                              SvgPicture.asset(SvgIcons.dashSmall)
-                            ],
-                          )
-                        ],
+                                  color: GlobalColors.greyDark,
+                                  fontFamily: 'Manrope',
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 14),
+                            ),
+
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                currentIndex == 0
+                                    ? SvgPicture.asset(
+                                        SvgIcons.dashLarge,
+                                      )
+                                    : SvgPicture.asset(SvgIcons.dashSmall),
+                                SvgPicture.asset(SvgIcons.dashSmall)
+                              ],
+                            ),
+
+                            
+                          ],
+                        ),
                       ),
                       Column(
                         children: [
                           Text("Your holiday shopping delivered to Screen one",
                               style: TextStyle(
                                   fontSize: 30,
-                                  color: Color(GlobalColors.white),
+                                  color: GlobalColors.white,
                                   fontFamily: 'Manrope')),
+                          Text(
+                              "There's something for everyone to enjoy with Sweet Shop Favourites Screen 1"),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
@@ -80,24 +111,34 @@ class _OnboardingState extends State<Onboarding> {
                 ),
                 SvgPicture.asset(SvgIcons.imageFallBack),
                 SizedBox(
-                  width: 200,
-                  height: 100,
+                  width: 253,
+                  height: 70,
                   child: ElevatedButton(
-                      onPressed: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-                        return const MyHomePage() ;
-                      },)),
+                      onPressed: () =>
+                          Navigator.pushReplacement(context, MaterialPageRoute(
+                            builder: (context) {
+                              return const MyHomePage();
+                            },
+                          )),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: GlobalColors.white,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20))),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text("Get Started $currentIndex"),
-                          SvgPicture.asset(SvgIcons.arrowRight, color: Color(GlobalColors.white),)
+                          // Text("Get Started", style: TextStyle(color: GlobalColors.blueLight),),
+                          Text("Get Started",
+                              style: CustomTextStyle.buttonTextBlue),
 
+                          SvgPicture.asset(
+                            SvgIcons.arrowRight,
+                            color: GlobalColors.blueLight,
+                          )
                         ],
                       )),
-                )
-
-                  ],
-
+                ),
+              ],
             ),
           ),
         ));
