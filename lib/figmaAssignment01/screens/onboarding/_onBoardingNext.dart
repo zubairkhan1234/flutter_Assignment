@@ -2,20 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutterassignment/figmaAssignment01/_my_home_page.dart';
 import 'package:flutterassignment/figmaAssignment01/constants/_svg_icons.dart';
-import 'package:flutterassignment/figmaAssignment01/screens/onboarding/_onBoardingNext.dart';
 import 'package:flutterassignment/figmaAssignment01/styles/_colors.dart';
 
-
-class Onboarding extends StatefulWidget {
-  const Onboarding({
+class OnboardingNext extends StatefulWidget {
+  const OnboardingNext({
     Key? key,
   }) : super(key: key);
 
   @override
-  _OnboardingState createState() => _OnboardingState();
+  _OnboardingNextState createState() => _OnboardingNextState();
 }
 
-class _OnboardingState extends State<Onboarding> {
+class _OnboardingNextState extends State<OnboardingNext> {
   @override
   int currentIndex = 0;
 
@@ -50,22 +48,21 @@ class _OnboardingState extends State<Onboarding> {
                                           fontSize: 30,
                                           color: Color(GlobalColors.white),
                                           fontFamily: 'Manrope')),
-                                      WidgetSpan(
-                                        child: Container(
-                                          padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
-                                          child:  SvgPicture.asset(
-                                            SvgIcons.house,
-                                          ),
-                                        ),
+                                  WidgetSpan(
+                                    child: Container(
+                                      padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
+                                      child: SvgPicture.asset(
+                                        SvgIcons.house,
                                       ),
-                                      TextSpan(
+                                    ),
+                                  ),
+                                  TextSpan(
                                       text:
                                           "There's something for everyone to enjoy with Sweet Shop Favourites Screen 2",
                                       style: TextStyle(
                                           fontSize: 18,
                                           color: Color(GlobalColors.greyDark),
                                           fontFamily: 'Manrope')),
-
                                 ])),
                               ),
                               Row(
@@ -73,11 +70,11 @@ class _OnboardingState extends State<Onboarding> {
                                 children: [
                                   currentIndex == 0
                                       ? Padding(
-                                        padding: const EdgeInsets.all(10),
-                                        child: SvgPicture.asset(
+                                          padding: const EdgeInsets.all(10),
+                                          child: SvgPicture.asset(
                                             SvgIcons.dashLarge,
                                           ),
-                                      )
+                                        )
                                       : SvgPicture.asset(SvgIcons.dashSmall),
                                   SvgPicture.asset(SvgIcons.dashSmall)
                                 ],
@@ -93,30 +90,29 @@ class _OnboardingState extends State<Onboarding> {
                                 padding: const EdgeInsets.all(8.0),
                                 child: RichText(
                                     text: TextSpan(children: [
-                                      TextSpan(
-                                          text:
+                                  TextSpan(
+                                      text:
                                           "Your holiday shopping delivered to Screen one",
-                                          style: TextStyle(
-                                              fontSize: 30,
-                                              color: Color(GlobalColors.white),
-                                              fontFamily: 'Manrope')),
-                                      WidgetSpan(
-                                        child: Container(
-                                          padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
-                                          child:  SvgPicture.asset(
-                                            SvgIcons.house,
-                                          ),
-                                        ),
+                                      style: TextStyle(
+                                          fontSize: 30,
+                                          color: Color(GlobalColors.white),
+                                          fontFamily: 'Manrope')),
+                                  WidgetSpan(
+                                    child: Container(
+                                      padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
+                                      child: SvgPicture.asset(
+                                        SvgIcons.house,
                                       ),
-                                      TextSpan(
-                                          text:
+                                    ),
+                                  ),
+                                  TextSpan(
+                                      text:
                                           "There's something for everyone to enjoy with Sweet Shop Favourites Screen 2",
-                                          style: TextStyle(
-                                              fontSize: 18,
-                                              color: Color(GlobalColors.greyDark),
-                                              fontFamily: 'Manrope')),
-
-                                    ])),
+                                      style: TextStyle(
+                                          fontSize: 18,
+                                          color: Color(GlobalColors.greyDark),
+                                          fontFamily: 'Manrope')),
+                                ])),
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
@@ -153,16 +149,16 @@ class _OnboardingState extends State<Onboarding> {
                                 RoundedRectangleBorder>(RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20),
                             ))),
-                        onPressed: () => Navigator.pushReplacement(context,
+                        onPressed: () => Navigator.push(context,
                                 MaterialPageRoute(
                               builder: (context) {
-                                return const OnboardingNext();
+                                return const MyHomePage();
                               },
                             )),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Text("Next",
+                            Text("Get Started",
                                 style: TextStyle(
                                     color: Color(GlobalColors.blueLight),
                                     fontWeight: FontWeight.w600)),

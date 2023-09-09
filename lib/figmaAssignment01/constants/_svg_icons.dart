@@ -7,4 +7,5 @@ class SvgIcons {
   static String dashLarge = "assets/svgIcons/dashLarge.svg";
   static String dashSmall = "assets/svgIcons/dashSmall.svg";
   static String imageFallBack = "assets/svgIcons/imageFallback.svg";
+  static String house = "assets/svgIcons/house.svg";
 }

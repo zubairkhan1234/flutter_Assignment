@@ -34,6 +34,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutterassignment/figmaAssignment01/constants/_svg_icons.dart';
+import 'package:flutterassignment/figmaAssignment01/styles/_colors.dart';
 class CustomBottomNavigation extends StatefulWidget {
   final Function(int)? ontapChangeScreen;
   final int index ;
@@ -60,22 +61,22 @@ class _BottomNavBarState extends State<CustomBottomNavigation> {
             items: <Widget>[
               Padding(
                 padding: EdgeInsets.all(10.0),
-                child: SvgPicture.asset(SvgIcons.home, color: widget.index == 0 ? Colors.yellow : Colors.white70,),
+                child:  SvgPicture.asset(SvgIcons.home, color: widget.index == 0 ? Colors.yellow : Color(GlobalColors.blackDark)),
               ),
               Padding(
                 padding: EdgeInsets.all(10.0),
-                child:  SvgPicture.asset(SvgIcons.heart,  color: widget.index == 1 ? Colors.yellow : Colors.white70),
+                child:  SvgPicture.asset(SvgIcons.heart,  color: widget.index == 1 ? Colors.yellow : Color(GlobalColors.blackDark)),
               ),
               Padding(
                 padding: EdgeInsets.all(10.0),
-                child:SvgPicture.asset(SvgIcons.category,  color: widget.index == 2 ? Colors.yellow : Colors.white70),
+                child:SvgPicture.asset(SvgIcons.category,  color: widget.index == 2 ? Colors.yellow : Color(GlobalColors.blackDark)),
               ),
               Padding(
                 padding: EdgeInsets.all(10.0),
-                child: SvgPicture.asset(SvgIcons.moreVertical,  color: widget.index == 3 ? Colors.yellow : Colors.white70),
+                child: SvgPicture.asset(SvgIcons.moreVertical,  color: widget.index == 3 ? Colors.yellow : Color(GlobalColors.blackDark)),
               ),
             ],
-            color: Colors.red,
+            color: Color(GlobalColors.white),
 
             buttonBackgroundColor: Colors.black,
             backgroundColor: Colors.transparent,
