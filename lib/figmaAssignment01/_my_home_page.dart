@@ -2,12 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutterassignment/figmaAssignment01/BottomNavigationBar/_bottom_bar.dart';
 import 'package:flutterassignment/figmaAssignment01/screens/home/_homeScreen.dart';
 import 'package:flutterassignment/figmaAssignment01/screens/onboarding/_onBoarding.dart';
+import 'package:flutterassignment/figmaAssignment01/styles/_colors.dart';
 
 class _State extends State<MyHomePage> {
   List appBarWidgets = [
     AppBar(
-      leading: SizedBox.shrink(),
+      automaticallyImplyLeading: false,
+      bottom: const PreferredSize(
+        preferredSize: Size.fromHeight(100),
+        child: Column(
+          children: [
+            Text("Hello",)
+          ],
+        ),
+      ) ,
       title: Text("Title"),
+      backgroundColor: GlobalColors.blueLight,
       actions: [
         Padding(
           padding: EdgeInsets.zero, // Padding ko zero set karein
@@ -20,7 +30,6 @@ class _State extends State<MyHomePage> {
         ),
       ],
     )
-
     ,
     AppBar(title: Text('Screen2')),
     AppBar(title: Text('Screen3')),
@@ -34,7 +43,7 @@ class _State extends State<MyHomePage> {
   ];
 
   List screens = [
-    HoneScreen(),
+    HomeScreen(),
     Onboarding(),
     Text('fist3'),
     Text('fist4')
@@ -53,6 +62,7 @@ class _State extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return  Scaffold(
       extendBody: true,
+
       appBar: appBarWidgets[screensIndex],
       // appBar: AppBar(title: appBarTitle[screensIndex]),
       body:  screens[screensIndex],

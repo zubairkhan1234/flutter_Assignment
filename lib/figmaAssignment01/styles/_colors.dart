@@ -12,6 +12,7 @@ class GlobalColors {
   static const Color greyDark = Color(0xFFA9B4BC);
   static const Color greyLight = Color(0xFFC5CDD2);
   static const Color greyMoreLight = Color(0xFFE7ECF0);
+  static const Color greyMoreLight2 = Color(0xF8F9FB);
   static const Color jasmine = Color(0xFFFFDC83);
   static const Color pinkRose = Color(0xFFFFC3BB);
   static const Color bone = Color(0xFFE4DDCB);
