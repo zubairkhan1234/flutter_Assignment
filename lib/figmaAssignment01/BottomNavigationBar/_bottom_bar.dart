@@ -28,15 +28,15 @@
 //   }
 // }
 
-
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutterassignment/figmaAssignment01/constants/_svg_icons.dart';
+import 'package:flutterassignment/figmaAssignment01/styles/_colors.dart';
+
 class CustomBottomNavigation extends StatefulWidget {
   final Function(int)? ontapChangeScreen;
-  final int index ;
+  final int index;
   const CustomBottomNavigation({this.ontapChangeScreen, required this.index});
 
   @override
@@ -49,62 +49,66 @@ class _BottomNavBarState extends State<CustomBottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return Theme(
-          data: Theme.of(context).copyWith(
-            iconTheme: IconThemeData(color: Colors.yellow)
+      data: Theme.of(context)
+          .copyWith(iconTheme: IconThemeData(color: Colors.yellow)),
+      child: CurvedNavigationBar(
+        key: _bottomNavigationKey,
+        index: widget.index,
+        height: 60.0,
+        items: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: SvgPicture.asset(SvgIcons.home,
+                color:
+                    widget.index == 0 ? Colors.yellow : GlobalColors.blackDark),
           ),
-          child: CurvedNavigationBar(
-            key: _bottomNavigationKey,
-            index: widget.index,
-            height: 60.0,
-
-            items: <Widget>[
-              Padding(
-                padding: EdgeInsets.all(10.0),
-                child: SvgPicture.asset(SvgIcons.home, color: widget.index == 0 ? Colors.yellow : Colors.white70,),
-              ),
-              Padding(
-                padding: EdgeInsets.all(10.0),
-                child:  SvgPicture.asset(SvgIcons.heart,  color: widget.index == 1 ? Colors.yellow : Colors.white70),
-              ),
-              Padding(
-                padding: EdgeInsets.all(10.0),
-                child:SvgPicture.asset(SvgIcons.category,  color: widget.index == 2 ? Colors.yellow : Colors.white70),
-              ),
-              Padding(
-                padding: EdgeInsets.all(10.0),
-                child: SvgPicture.asset(SvgIcons.moreVertical,  color: widget.index == 3 ? Colors.yellow : Colors.white70),
-              ),
-            ],
-            color: Colors.red,
-
-            buttonBackgroundColor: Colors.black,
-            backgroundColor: Colors.transparent,
-            animationCurve: Curves.easeInOut,
-            animationDuration: Duration(milliseconds: 400),
-            onTap:  widget.ontapChangeScreen,
-            letIndexChange: (index) => true,
-
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: SvgPicture.asset(SvgIcons.heart,
+                color:
+                    widget.index == 1 ? Colors.yellow : GlobalColors.blackDark),
           ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: SvgPicture.asset(SvgIcons.category,
+                color:
+                    widget.index == 2 ? Colors.yellow : GlobalColors.blackDark),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: SvgPicture.asset(SvgIcons.moreVertical,
+                color:
+                    widget.index == 3 ? Colors.yellow : GlobalColors.blackDark),
+          ),
+        ],
+        color: GlobalColors.white,
+        buttonBackgroundColor: Colors.black,
+        backgroundColor: Colors.transparent,
+        animationCurve: Curves.easeInOut,
+        animationDuration: const Duration(milliseconds: 400),
+        onTap: widget.ontapChangeScreen,
+        letIndexChange: (index) => true,
+      ),
 
-          // body: Container(
-          //   color: Colors.blueAccent,
-          //   child: Center(
-          //     child: Column(
-          //       mainAxisAlignment: MainAxisAlignment.center,
-          //       children: <Widget>[
-          //         Text(_page.toString(), textScaleFactor: 10.0),
-          //         ElevatedButton(
-          //           child: Text('Go To Page of index 1'),
-          //           onPressed: () {
-          //             final CurvedNavigationBarState? navBarState =
-          //                 _bottomNavigationKey.currentState;
-          //             navBarState?.setPage(1);
-          //           },
-          //         )
-          //       ],
-          //     ),
-          //   ),
-          // ),
-        );
+      // body: Container(
+      //   color: Colors.blueAccent,
+      //   child: Center(
+      //     child: Column(
+      //       mainAxisAlignment: MainAxisAlignment.center,
+      //       children: <Widget>[
+      //         Text(_page.toString(), textScaleFactor: 10.0),
+      //         ElevatedButton(
+      //           child: Text('Go To Page of index 1'),
+      //           onPressed: () {
+      //             final CurvedNavigationBarState? navBarState =
+      //                 _bottomNavigationKey.currentState;
+      //             navBarState?.setPage(1);
+      //           },
+      //         )
+      //       ],
+      //     ),
+      //   ),
+      // ),
+    );
   }
 }
