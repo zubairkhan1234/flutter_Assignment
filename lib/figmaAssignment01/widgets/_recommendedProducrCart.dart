@@ -52,36 +52,40 @@ class _RecommendedProductCartState extends State<RecommendedProductCart> {
                 return Container(
                   width: 128,
                   height: 194,
+
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                       color: GlobalColors.greyMoreLight),
                   // color: GlobalColors.greyMoreLight2),
                   margin: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-
-                      Center(
-                        child: SvgPicture.asset(
-                          (SvgIcons.productFallback),
-                          width: 68,
-                          height: 68,
-                          color: GlobalColors.greyLight,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Center(
+                          child: SvgPicture.asset(
+                            (SvgIcons.productFallback),
+                            width: 68,
+                            height: 68,
+                            color: GlobalColors.greyLight,
+                          ),
                         ),
-                      ),
-                      Text(offerList[index]['title'],
-
-                          style: const TextStyle(
-                              fontSize: 26, color: GlobalColors.white), textAlign: TextAlign.start,),
-                      Text("${offerList[index]['type']}",
-                          style: const TextStyle(
-                              fontSize: 22,
-                              color: GlobalColors.white,
-                              fontWeight: FontWeight.w900)),
-                      Text("${offerList[index]['price']}",
-                          style: const TextStyle(
-                              fontSize: 16, color: GlobalColors.white))
-                    ],
+                        const Spacer(),
+                        Text(offerList[index]['title'],
+                            style: const TextStyle(
+                                fontSize: 14,
+                                color: GlobalColors.blackDark, fontWeight: FontWeight.w600), textAlign: TextAlign.start,),
+                        Text("${offerList[index]['type']}",
+                            style: const TextStyle(
+                                fontSize: 12,
+                                color: GlobalColors.greyDark,
+                                fontWeight: FontWeight.w400)),
+                        Text("${offerList[index]['price']}",
+                            style: const TextStyle(
+                                fontSize: 16, color: GlobalColors.white))
+                      ],
+                    ),
                   ),
                 );
               }),
