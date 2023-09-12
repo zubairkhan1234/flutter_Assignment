@@ -54,7 +54,7 @@ class _RecommendedProductCartState extends State<RecommendedProductCart> {
                   height: 194,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
-                      color: GlobalColors.yellowLight),
+                      color: GlobalColors.greyMoreLight),
                   // color: GlobalColors.greyMoreLight2),
                   margin: const EdgeInsets.symmetric(horizontal: 10),
                   child: Column(
@@ -63,7 +63,7 @@ class _RecommendedProductCartState extends State<RecommendedProductCart> {
 
                       Center(
                         child: SvgPicture.asset(
-                          (SvgIcons.imageFallBack),
+                          (SvgIcons.productFallback),
                           width: 68,
                           height: 68,
                           color: GlobalColors.greyLight,
