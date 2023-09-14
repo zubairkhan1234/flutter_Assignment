@@ -45,6 +45,7 @@ class _RecommendedProductCartState extends State<RecommendedProductCart> {
         ),
         Container(
           height: 194,
+          margin: const EdgeInsets.symmetric(vertical: 10),
           child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: offerList.length,
@@ -72,18 +73,44 @@ class _RecommendedProductCartState extends State<RecommendedProductCart> {
                           ),
                         ),
                         const Spacer(),
-                        Text(offerList[index]['title'],
-                            style: const TextStyle(
-                                fontSize: 14,
-                                color: GlobalColors.blackDark, fontWeight: FontWeight.w600), textAlign: TextAlign.start,),
+                        Text(
+                          offerList[index]['title'],
+                          style: const TextStyle(
+                              fontSize: 14,
+                              color: GlobalColors.blackDark,
+                              fontWeight: FontWeight.w600),
+                          textAlign: TextAlign.start,
+                        ),
                         Text("${offerList[index]['type']}",
                             style: const TextStyle(
                                 fontSize: 12,
                                 color: GlobalColors.greyDark,
                                 fontWeight: FontWeight.w400)),
-                        Text("${offerList[index]['price']}",
-                            style: const TextStyle(
-                                fontSize: 16, color: GlobalColors.white))
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                              color: GlobalColors.white, ),
+                          margin: const EdgeInsets.symmetric(vertical: 5),
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(5, 0, 0, 0),
+                            child: Row(
+                              mainAxisAlignment : MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(children: [
+                                  const Text("Unit",
+                                      style:  TextStyle(
+                                          fontSize: 16,
+                                          color: GlobalColors.greyDark)),
+                                  Text("${offerList[index]['price']}",
+                                      style: const TextStyle(
+                                          fontSize: 16,
+                                          color: GlobalColors.blackDark)),
+                                ],),
+                              const  CircleAvatar(child:  Text("+"), radius: 12,),
+                              ],
+                            ),
+                          ),
+                        )
                       ],
                     ),
                   ),

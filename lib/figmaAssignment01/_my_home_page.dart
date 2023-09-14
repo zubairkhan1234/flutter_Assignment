@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutterassignment/figmaAssignment01/BottomNavigationBar/_bottom_bar.dart';
 import 'package:flutterassignment/figmaAssignment01/constants/_svg_icons.dart';
+import 'package:flutterassignment/figmaAssignment01/screens/home/_CategoryScreen.dart';
 import 'package:flutterassignment/figmaAssignment01/screens/home/_homeScreen.dart';
 import 'package:flutterassignment/figmaAssignment01/screens/onboarding/_onBoarding.dart';
 import 'package:flutterassignment/figmaAssignment01/styles/_colors.dart';
@@ -51,7 +52,7 @@ class _State extends State<MyHomePage> {
     Text('Screen4'),
   ];
 
-  List screens = [HomeScreen(), Onboarding(), Text('fist3'), Text('fist4')];
+  List screens = [HomeScreen(), CategoryScreen(), Text('fist3'), Text('fist4')];
   int screensIndex = 0;
 
   ontapChangeScreen(index) {
