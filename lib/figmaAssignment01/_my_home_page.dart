@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutterassignment/figmaAssignment01/BottomNavigationBar/_bottom_bar.dart';
 import 'package:flutterassignment/figmaAssignment01/constants/_svg_icons.dart';
-import 'package:flutterassignment/figmaAssignment01/screens/home/_CategoryScreen.dart';
+import 'package:flutterassignment/figmaAssignment01/screens/category/_CategoryScreen.dart';
+import 'package:flutterassignment/figmaAssignment01/screens/facourite/_favouriteScreen.dart';
 import 'package:flutterassignment/figmaAssignment01/screens/home/_homeScreen.dart';
 import 'package:flutterassignment/figmaAssignment01/screens/onboarding/_onBoarding.dart';
 import 'package:flutterassignment/figmaAssignment01/styles/_colors.dart';
@@ -12,7 +13,7 @@ class _State extends State<MyHomePage> {
     AppBar(
       automaticallyImplyLeading: false,
       bottom: const PreferredSize(
-        preferredSize: Size.fromHeight(100),
+        preferredSize: Size.fromHeight(120),
         child: Column(
           children: [
             Text(
@@ -25,24 +26,102 @@ class _State extends State<MyHomePage> {
       backgroundColor: GlobalColors.blueLight,
       actions: [
         Padding(
-          padding: EdgeInsets.zero, // Padding ko zero set karein
-          child: Stack(
-            children: [
-              IconButton(
-                onPressed: () {
-                  // Yahan aapka icon ke action ko daal sakte hain
-                },
-                icon: SvgPicture.asset(SvgIcons.shopIcon),
-              ),
-              // const CircleAvatar(child: Text("3"),)
-            ],
-          )
-
-        ),
+            padding: EdgeInsets.zero, // Padding ko zero set karein
+            child: Stack(
+              children: [
+                IconButton(
+                  onPressed: () {
+                    // Yahan aapka icon ke action ko daal sakte hain
+                  },
+                  icon: SvgPicture.asset(SvgIcons.shopIcon),
+                ),
+                // const CircleAvatar(child: Text("3"),)
+              ],
+            )),
       ],
     ),
-    AppBar(title: Text('Screen2')),
-    AppBar(title: Text('Screen3')),
+    AppBar(
+      automaticallyImplyLeading: false,
+      bottom: const PreferredSize(
+        preferredSize: Size.fromHeight(120),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Shop",
+              style: TextStyle(
+                  fontSize: 50,
+                  fontFamily: 'Manrope',
+                  color: GlobalColors.white),
+            ),
+            Text(
+              "By Category",
+              style: TextStyle(
+                  fontSize: 50,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Manrope',
+                  color: GlobalColors.white),
+            ),
+          ],
+        ),
+      ),
+      title: Text("Hey'Halal"),
+      backgroundColor: GlobalColors.blueLight,
+      actions: [
+        Padding(
+            padding: EdgeInsets.zero, // Padding ko zero set karein
+            child: Stack(
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: SvgPicture.asset(SvgIcons.shopIcon),
+                ),
+                // const CircleAvatar(child: Text("3"),)
+              ],
+            )),
+      ],
+    ),
+    AppBar(
+      automaticallyImplyLeading: false,
+      bottom: const PreferredSize(
+        preferredSize: Size.fromHeight(120),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Shop",
+              style: TextStyle(
+                  fontSize: 50,
+                  fontFamily: 'Manrope',
+                  color: GlobalColors.white),
+            ),
+            Text(
+              "By Category",
+              style: TextStyle(
+                  fontSize: 50,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Manrope',
+                  color: GlobalColors.white),
+            ),
+          ],
+        ),
+      ),
+      title: Text("Hey'Halal"),
+      backgroundColor: GlobalColors.blueLight,
+      actions: [
+        Padding(
+            padding: EdgeInsets.zero, // Padding ko zero set karein
+            child: Stack(
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: SvgPicture.asset(SvgIcons.shopIcon),
+                ),
+                // const CircleAvatar(child: Text("3"),)
+              ],
+            )),
+      ],
+    ),
     AppBar(title: Text('Screen4')),
   ];
   List appBarTitle = [
@@ -52,7 +131,12 @@ class _State extends State<MyHomePage> {
     Text('Screen4'),
   ];
 
-  List screens = [HomeScreen(), CategoryScreen(), Text('fist3'), Text('fist4')];
+  List screens = [
+    const HomeScreen(),
+    const CategoryScreen(),
+    const FavouriteScreen(),
+    Text('fist4')
+  ];
   int screensIndex = 0;
 
   ontapChangeScreen(index) {

@@ -8,6 +8,7 @@ class GridProductCart extends StatefulWidget {
 
   @override
   State<GridProductCart> createState() => _GridProductCartState();
+
 }
 
 class _GridProductCartState extends State<GridProductCart> {
@@ -28,15 +29,23 @@ class _GridProductCartState extends State<GridProductCart> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+
+
+    /*24 is for notification bar on Android*/
+    final double itemHeight = (size.height );
+    final double itemWidth = size.width / 2;
+
+
     return SingleChildScrollView(
         child: Container(
-      height: 400,
+      height: itemHeight,
       margin: const EdgeInsets.symmetric(vertical: 10),
       child: GridView.count(
         crossAxisCount: 2,
         scrollDirection: Axis.vertical,
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
+        crossAxisSpacing: 25,
+        mainAxisSpacing: 20,
         children: List.generate(
             offerList.length,
             (index) => Container(
@@ -46,8 +55,6 @@ class _GridProductCartState extends State<GridProductCart> {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
                       color: GlobalColors.greyMoreLight),
-                  // color: GlobalColors.greyMoreLight2),
-                  margin: const EdgeInsets.symmetric(horizontal: 10),
                   child: Padding(
                     padding: const EdgeInsets.all(20),
                     child: Column(
