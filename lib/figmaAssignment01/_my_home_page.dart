@@ -7,6 +7,7 @@ import 'package:flutterassignment/figmaAssignment01/screens/facourite/_favourite
 import 'package:flutterassignment/figmaAssignment01/screens/home/_homeScreen.dart';
 import 'package:flutterassignment/figmaAssignment01/screens/onboarding/_onBoarding.dart';
 import 'package:flutterassignment/figmaAssignment01/styles/_colors.dart';
+import 'package:flutterassignment/figmaAssignment01/widgets/_searchDelegate.dart';
 
 class _State extends State<MyHomePage> {
   List appBarWidgets = [
@@ -16,9 +17,7 @@ class _State extends State<MyHomePage> {
         preferredSize: Size.fromHeight(120),
         child: Column(
           children: [
-            Text(
-              "Hello",
-            )
+            Text("hellp")
           ],
         ),
       ),

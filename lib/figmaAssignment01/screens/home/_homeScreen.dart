@@ -5,6 +5,8 @@ import "package:flutterassignment/figmaAssignment01/styles/_colors.dart";
 import "package:flutterassignment/figmaAssignment01/widgets/_offerCartWidget.dart";
 import "package:flutterassignment/figmaAssignment01/widgets/_recommendedProducrCart.dart";
 
+import "../../widgets/_searchDelegate.dart";
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -20,6 +22,10 @@ class _HomeScreenState extends State<HomeScreen> {
       margin: const EdgeInsets.fromLTRB(10, 25, 10, 25),
       child: Column(
         children: [
+          FloatingActionButton(
+            child: Icon(Icons.search),
+            onPressed: () => showSearch(context: context, delegate: Search()),
+          ),
           OfferCart(),
           const RecommendedProductCart(),
           const RecommendedProductCart(),
