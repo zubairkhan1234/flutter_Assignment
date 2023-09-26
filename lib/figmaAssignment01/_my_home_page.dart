@@ -13,11 +13,42 @@ class _State extends State<MyHomePage> {
   List appBarWidgets = [
     AppBar(
       automaticallyImplyLeading: false,
-      bottom: const PreferredSize(
+      bottom: PreferredSize(
         preferredSize: Size.fromHeight(120),
         child: Column(
           children: [
-            Text("hellp")
+            // Text("hellp")
+            Builder(
+              builder: (context) {
+                return TextFormField(
+                  decoration: InputDecoration(
+                    hintText: "Search Product",
+                    hintStyle: TextStyle(color:GlobalColors.greyLight ),
+                    fillColor: GlobalColors.blueDark,
+                    prefixIcon: Icon(Icons.search, color: GlobalColors.white),
+                    filled: true,
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),borderSide: BorderSide(color: GlobalColors.blueDark, width: 2)),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20), borderSide: BorderSide(color: GlobalColors.blueDark, width: 2)),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20), borderSide: BorderSide(color: GlobalColors.blueDark, width: 2)),
+                  ),
+                  onTap: () => showSearch(
+                    context: context,
+                    delegate: Search(),
+                  ),
+                  readOnly: true,
+                );
+                // return FloatingActionButton(
+                //   child: Icon(Icons.search),
+                //   onPressed: () => showSearch(
+                //     context: context,
+                //     delegate: Search(),
+                //   ),
+                // );
+              },
+            )
           ],
         ),
       ),

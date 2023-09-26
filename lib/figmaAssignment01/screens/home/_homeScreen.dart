@@ -22,10 +22,10 @@ class _HomeScreenState extends State<HomeScreen> {
       margin: const EdgeInsets.fromLTRB(10, 25, 10, 25),
       child: Column(
         children: [
-          FloatingActionButton(
-            child: Icon(Icons.search),
-            onPressed: () => showSearch(context: context, delegate: Search()),
-          ),
+          // FloatingActionButton(
+          //   child: Icon(Icons.search),
+          //   onPressed: () => showSearch(context: context, delegate: Search()),
+          // ),
           OfferCart(),
           const RecommendedProductCart(),
           const RecommendedProductCart(),
