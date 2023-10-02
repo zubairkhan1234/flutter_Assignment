@@ -50,9 +50,12 @@ class _State extends State<MyHomePage> {
                 // );
               },
             ),
-            MyDropDown(),
-            MyDropDown(),
-
+             Row(
+              children:  [
+                MyDropDown(),
+                MyDropDown(),
+              ],
+            ),
           ],
         ),
       ),

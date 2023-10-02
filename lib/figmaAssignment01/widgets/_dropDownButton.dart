@@ -17,7 +17,7 @@ class _MyDropDownState extends State<MyDropDown> {
   Widget build(BuildContext context) {
     return DropdownButton(
       hint: const Text('Select Address', style: TextStyle(color: GlobalColors.white),),
-      dropdownColor: GlobalColors.white,
+      dropdownColor: GlobalColors.greyLight,
         value: selectedValue,
         onChanged: (value) {
           setState(() {
