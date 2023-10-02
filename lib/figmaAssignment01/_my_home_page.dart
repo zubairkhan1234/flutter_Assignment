@@ -7,6 +7,7 @@ import 'package:flutterassignment/figmaAssignment01/screens/facourite/_favourite
 import 'package:flutterassignment/figmaAssignment01/screens/home/_homeScreen.dart';
 import 'package:flutterassignment/figmaAssignment01/screens/onboarding/_onBoarding.dart';
 import 'package:flutterassignment/figmaAssignment01/styles/_colors.dart';
+import 'package:flutterassignment/figmaAssignment01/widgets/_dropDownButton.dart';
 import 'package:flutterassignment/figmaAssignment01/widgets/_searchDelegate.dart';
 
 class _State extends State<MyHomePage> {
@@ -48,7 +49,10 @@ class _State extends State<MyHomePage> {
                 //   ),
                 // );
               },
-            )
+            ),
+            MyDropDown(),
+            MyDropDown(),
+
           ],
         ),
       ),
