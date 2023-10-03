@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterassignment/figmaAssignment01/_app.dart';
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 // class MyApp extends StatelessWidget {
 //

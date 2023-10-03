@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import "package:flutter_svg/svg.dart";
+import "package:flutterassignment/figmaAssignment01/screens/home/_homeDealScreen.dart";
 
 import "../constants/_svg_icons.dart";
 import "../styles/_colors.dart";
@@ -36,37 +37,42 @@ class _OfferCartState extends State<OfferCart> {
           scrollDirection: Axis.horizontal,
           itemCount: offerList.length,
           itemBuilder: (context, index) {
-            return Container(
-              width: 269,
-              height: 123,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16), color: Colors.amber),
-              margin: const EdgeInsets.symmetric(horizontal: 10),
-              child: Row(
-                children: [
-                  Container(
-                    child: SvgPicture.asset((SvgIcons.imageFallBack)),
-                  ),
-                  Container(
-                    child:  Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(offerList[index]['title'] ,
-                            style: const TextStyle(
-                                fontSize: 26, color: GlobalColors.white)),
-                        Text("${offerList[index]['offerPercent']}% OFF",
-                            style: const TextStyle(
-                                fontSize: 22,
-                                color: GlobalColors.white,
-                                fontWeight: FontWeight.w900)),
-                        Text("On first ${offerList[index]['orderLimit']} orders",
-                            style:  const TextStyle(
-                                fontSize: 16, color: GlobalColors.white))
-                      ],
+            return GestureDetector(
+              // onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+              //   return const HomeDealScreen();
+              // },)),
+              child: Container(
+                width: 269,
+                height: 123,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16), color: Colors.amber),
+                margin: const EdgeInsets.symmetric(horizontal: 10),
+                child: Row(
+                  children: [
+                    Container(
+                      child: SvgPicture.asset((SvgIcons.imageFallBack)),
                     ),
-                  )
-                ],
+                    Container(
+                      child:  Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(offerList[index]['title'] ,
+                              style: const TextStyle(
+                                  fontSize: 26, color: GlobalColors.white)),
+                          Text("${offerList[index]['offerPercent']}% OFF",
+                              style: const TextStyle(
+                                  fontSize: 22,
+                                  color: GlobalColors.white,
+                                  fontWeight: FontWeight.w900)),
+                          Text("On first ${offerList[index]['orderLimit']} orders",
+                              style:  const TextStyle(
+                                  fontSize: 16, color: GlobalColors.white))
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
             );
           }),

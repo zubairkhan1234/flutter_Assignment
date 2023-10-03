@@ -8,7 +8,8 @@ import "package:flutterassignment/figmaAssignment01/widgets/_recommendedProducrC
 import "../../widgets/_searchDelegate.dart";
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  PageController pageController;
+  HomeScreen({required this.pageController,super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -26,7 +27,9 @@ class _HomeScreenState extends State<HomeScreen> {
           //   child: Icon(Icons.search),
           //   onPressed: () => showSearch(context: context, delegate: Search()),
           // ),
-          OfferCart(),
+          GestureDetector(onTap: (){
+            widget.pageController.nextPage(duration: Duration(seconds: 1), curve: Curves.easeIn);
+          },child: OfferCart()),
           const RecommendedProductCart(),
           const RecommendedProductCart(),
         ],

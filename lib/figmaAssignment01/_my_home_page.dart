@@ -4,7 +4,9 @@ import 'package:flutterassignment/figmaAssignment01/BottomNavigationBar/_bottom_
 import 'package:flutterassignment/figmaAssignment01/constants/_svg_icons.dart';
 import 'package:flutterassignment/figmaAssignment01/screens/category/_CategoryScreen.dart';
 import 'package:flutterassignment/figmaAssignment01/screens/facourite/_favouriteScreen.dart';
+import 'package:flutterassignment/figmaAssignment01/screens/home/_homeDealScreen.dart';
 import 'package:flutterassignment/figmaAssignment01/screens/home/_homeScreen.dart';
+import 'package:flutterassignment/figmaAssignment01/screens/home/pageViews/_homePageViews.dart';
 import 'package:flutterassignment/figmaAssignment01/screens/onboarding/_onBoarding.dart';
 import 'package:flutterassignment/figmaAssignment01/styles/_colors.dart';
 import 'package:flutterassignment/figmaAssignment01/widgets/_deliveryDropDown.dart';
@@ -29,7 +31,8 @@ class _State extends State<MyHomePage> {
                       hintText: "Search Product",
                       hintStyle: const TextStyle(color: GlobalColors.greyLight),
                       fillColor: GlobalColors.blueDark,
-                      prefixIcon: const Icon(Icons.search, color: GlobalColors.white),
+                      prefixIcon:
+                          const Icon(Icons.search, color: GlobalColors.white),
                       filled: true,
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20),
@@ -61,19 +64,27 @@ class _State extends State<MyHomePage> {
               },
             ),
             Container(
-              margin:const EdgeInsets.fromLTRB(15, 0, 15, 0),
+              margin: const EdgeInsets.fromLTRB(15, 0, 15, 0),
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Delivery To"),
+                      Text(
+                        "Delivery To",
+                        style: TextStyle(color: GlobalColors.greyLight),
+                      ),
                       AddressDropDown(),
                     ],
                   ),
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Within"),
+                      Text(
+                        "Within",
+                        style: TextStyle(color: GlobalColors.greyLight),
+                      ),
                       DeliveryDropDown(),
                     ],
                   ),
@@ -193,7 +204,9 @@ class _State extends State<MyHomePage> {
   ];
 
   List screens = [
-    const HomeScreen(),
+    // const HomeScreen(),
+    // const HomeDealScreen(),
+    HomePageView(),
     const CategoryScreen(),
     const FavouriteScreen(),
     Text('fist4')
@@ -207,6 +220,8 @@ class _State extends State<MyHomePage> {
     });
   }
 
+  bool _close = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -214,7 +229,15 @@ class _State extends State<MyHomePage> {
 
       appBar: appBarWidgets[screensIndex],
       // appBar: AppBar(title: appBarTitle[screensIndex]),
-      body: screens[screensIndex],
+      body: WillPopScope(
+        child: screens[screensIndex],
+        onWillPop: () async {
+          setState(() {
+            screensIndex = 0;
+          });
+          return _close;
+        },
+      ),
       bottomNavigationBar: CustomBottomNavigation(
         ontapChangeScreen: (index) {
           setState(() {
