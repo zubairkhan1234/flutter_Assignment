@@ -7,7 +7,8 @@ import 'package:flutterassignment/figmaAssignment01/screens/facourite/_favourite
 import 'package:flutterassignment/figmaAssignment01/screens/home/_homeScreen.dart';
 import 'package:flutterassignment/figmaAssignment01/screens/onboarding/_onBoarding.dart';
 import 'package:flutterassignment/figmaAssignment01/styles/_colors.dart';
-import 'package:flutterassignment/figmaAssignment01/widgets/_dropDownButton.dart';
+import 'package:flutterassignment/figmaAssignment01/widgets/_deliveryDropDown.dart';
+import 'package:flutterassignment/figmaAssignment01/widgets/_addressDropDown.dart';
 import 'package:flutterassignment/figmaAssignment01/widgets/_searchDelegate.dart';
 
 class _State extends State<MyHomePage> {
@@ -21,25 +22,34 @@ class _State extends State<MyHomePage> {
             // Text("hellp")
             Builder(
               builder: (context) {
-                return TextFormField(
-                  decoration: InputDecoration(
-                    hintText: "Search Product",
-                    hintStyle: TextStyle(color:GlobalColors.greyLight ),
-                    fillColor: GlobalColors.blueDark,
-                    prefixIcon: Icon(Icons.search, color: GlobalColors.white),
-                    filled: true,
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),borderSide: BorderSide(color: GlobalColors.blueDark, width: 2)),
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20), borderSide: BorderSide(color: GlobalColors.blueDark, width: 2)),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20), borderSide: BorderSide(color: GlobalColors.blueDark, width: 2)),
+                return Container(
+                  margin: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      hintText: "Search Product",
+                      hintStyle: const TextStyle(color: GlobalColors.greyLight),
+                      fillColor: GlobalColors.blueDark,
+                      prefixIcon: const Icon(Icons.search, color: GlobalColors.white),
+                      filled: true,
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: const BorderSide(
+                              color: GlobalColors.blueDark, width: 2)),
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: const BorderSide(
+                              color: GlobalColors.blueDark, width: 2)),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: const BorderSide(
+                              color: GlobalColors.blueDark, width: 2)),
+                    ),
+                    onTap: () => showSearch(
+                      context: context,
+                      delegate: Search(),
+                    ),
+                    readOnly: true,
                   ),
-                  onTap: () => showSearch(
-                    context: context,
-                    delegate: Search(),
-                  ),
-                  readOnly: true,
                 );
                 // return FloatingActionButton(
                 //   child: Icon(Icons.search),
@@ -50,11 +60,25 @@ class _State extends State<MyHomePage> {
                 // );
               },
             ),
-             Row(
-              children:  [
-                MyDropDown(),
-                MyDropDown(),
-              ],
+            Container(
+              margin:const EdgeInsets.fromLTRB(15, 0, 15, 0),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    children: [
+                      Text("Delivery To"),
+                      AddressDropDown(),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text("Within"),
+                      DeliveryDropDown(),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),
