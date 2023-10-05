@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "956906864296",
+    "project_id": "smit-login-signup",
+    "storage_bucket": "smit-login-signup.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956906864296:android:db9f4886ac00e814aacc9d",
+        "android_client_info": {
+          "package_name": "com.example.flutterassignment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSIa162RjMBqHZ1MrM9n8ris2H4u9zYbI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

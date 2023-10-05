@@ -4,7 +4,8 @@ import 'package:flutterassignment/pallete.dart';
 
 class InputsFields extends StatelessWidget{
   final String hintText;
-  const InputsFields({Key? key, required this.hintText}) : super(key: key);
+  TextEditingController  controller;
+   InputsFields({Key? key, required this.hintText,required this.controller}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +15,7 @@ class InputsFields extends StatelessWidget{
         maxWidth: 400
       ),
       child: TextFormField(
+        controller: controller,
         decoration:  InputDecoration(
           contentPadding: const EdgeInsets.all(27),
           enabledBorder:  OutlineInputBorder(
@@ -33,9 +35,8 @@ class InputsFields extends StatelessWidget{
             hintText: hintText,
 
         ),
+        onChanged: (value) {print(value);} ,
       ),
     );
-
   }
-
 }

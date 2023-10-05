@@ -1,7 +1,15 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterassignment/firebase_options.dart';
 import 'package:flutterassignment/login_screen.dart';
 import 'package:flutterassignment/pallete.dart';
-void main() => runApp(MyApp());
+import 'package:flutterassignment/signUpScreen.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform  );
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
 
@@ -12,7 +20,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Pallete.backgroundColor
       ),
-      home: LoginScreen(),
+      // home: LoginScreen(),
+      home : SignUpScreen()
     );
   }
 }
